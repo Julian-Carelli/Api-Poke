@@ -30,15 +30,28 @@ padding:45px 0px;
     color:white;
 }
 
+.CompleteCard__arrow {
+    background:white;
+    height:3px;
+    border-radius:15px;
+    width:100%;
+}
+
+.CompleteCard__information{
+    padding:25px 0px;
+}
 
 .CompleteCard__title_stats {
     width:80%;
-    padding:45px 0px;
     color:white;
 }
 
 .CompleteCard__stats {
     color:black;
+}
+
+.CompleteCard__text {
+    font-size:18px;
 }
 
 .CompleteCard__prop {

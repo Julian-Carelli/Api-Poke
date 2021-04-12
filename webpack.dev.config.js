@@ -11,6 +11,10 @@ module.exports = {
 
   mode:'development',
 
+  performance: {
+    hints: false
+  },
+
   devServer: {
     historyApiFallback: true,
     contentBase: './dist',
@@ -57,10 +61,11 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpe?g|gif|jp2|webp)$/,
-        loader: 'file-loader',
+        test: /\.(gif|jpg)$/,
+        loader: 'url-loader',//url-loader?limit=30000
         options: {
-          name: '[name].[ext]',
+            limit:30000,
+            name: '[path][name].[ext]?[hash]',
         },
       },
       

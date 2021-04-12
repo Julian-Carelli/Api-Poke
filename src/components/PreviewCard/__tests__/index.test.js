@@ -1,32 +1,29 @@
 import React from 'react';
-import { screen, render, cleanup, fireEvent } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import {PreviewCard} from '../index';
 
-const stubbedPreviewCard = {
-    pokemonId: 1,
-    pokemonName:'pikachu',
-    pokemonSprite:'image.png',
-    handleModal: () => 'hello world'
-};
-
 describe('PreviewCard', () => {
+
+    afterEach(() => {
+        cleanup()
+    })
+
+
     it('render correctly', () => {
         const {getByTestId} = render(<PreviewCard/>);
 
-        expect(getByTestId("PreviewCard")).toBeTruthy()
+        expect(getByTestId("PreviewCard")).toHaveTextContent('Ver mas')
     })
 
     it('event onclick', () => {
-        const handledClick = jest.fn()
+        const mockOnClick= jest.fn();
 
-        const {getByTestId} = render(<PreviewCard/>)
-        const searchInput = getByTestId('btn')
+        const {getByTestId} = render(<PreviewCard handleModal={mockOnClick} />)
 
-        console.log(searchInput)
+        fireEvent.click(getByTestId('btn'))
 
-        fireEvent.click(searchInput)
+        expect(mockOnClick).toHaveBeenCalledTimes(1)
 
-        expect(handledClick).toHaveBeenCalledTimes(1)
 
     })
 })

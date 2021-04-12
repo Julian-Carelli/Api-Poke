@@ -4,7 +4,6 @@ export const SearchStyled = styled.section.attrs({
     className:'Search container'
 })`
 
-width:80%;
 
 .Search__row {
     @media screen and (max-width:728px){
@@ -15,6 +14,10 @@ width:80%;
 
 .Search__input {
     width:500px;
+}
+
+.Search__button {
+    width:150px;
 }
 
 `;

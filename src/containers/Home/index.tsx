@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import {Header} from '../../components/Header/index';
-import {Presentation} from '../../components/Presentation/index';
+import Presentation from '../../components/Presentation/index';
 import {Search} from '../../components/Search/index';
 
 import arrayFilter from '../../utils/arrayFilter';
@@ -15,6 +15,14 @@ export const Home = () => {
     const [modal, setModal] = useState<boolean | undefined>((false));
     const [loading, setLoading] = useState<boolean | undefined>(false);
     const [error, setError] = useState<string | undefined>(undefined);
+
+
+    const escapeModal = e => {
+        if(e.key === "Escape") {
+            setModal(false)
+        }
+    };
+
 
     const getPokemons = async () => {
 
@@ -43,11 +51,7 @@ export const Home = () => {
 
     const searchPreviewPokemon = () => {
 
-        if(pokemonName.length -1 < 1){
-            getPokemons();
-        }
-
-        const inmutableCharacters:Array<object> = [...pokemons];
+        const inmutableCharacters:any = [...pokemons];
 
         const filterPokemons:Array<object> = arrayFilter(inmutableCharacters, pokemonName);
 
@@ -85,8 +89,6 @@ export const Home = () => {
 
         setPokemonName(value);
 
-        searchPreviewPokemon();
-
     };
 
     const handleModal = async (e:any) => {
@@ -111,6 +113,8 @@ export const Home = () => {
 
     }, []);
 
+    document.addEventListener('keydown', escapeModal);
+    
     const modalOriginal = document.getElementById('modal');
     modalOriginal.style.position = "";
     modalOriginal.style.top = "";
@@ -133,6 +137,7 @@ export const Home = () => {
             <Search
                 handleOnChange={handleOnChange}
                 pokemonName={pokemonName}
+                searchPokemon={searchPreviewPokemon}
             ></Search>
 
             <Presentation

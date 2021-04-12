@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import {IProps} from './IProps';
+import {PresentationStyled} from '../Presentation/style';
 
 import getSprites from '../../utils/getSprites';
 import getPokemonId from '../../utils/getPokemonId';
@@ -10,8 +11,8 @@ import {Modal} from '../Modal/index';
 import {NotFound} from '../NotFound/index';
 import {Loading} from '../Loading/index';
 
-export const Presentation = (props:IProps) => (
-    <div data-testid="Presentation" className="Presentation container">
+const Presentation = (props:IProps) => (
+    <PresentationStyled data-testid="Presentation">
         <div className="Presentation__row row">
 
             {props.stateLoading === true && 
@@ -56,5 +57,7 @@ export const Presentation = (props:IProps) => (
             })}
         
         </div>
-    </div>
+    </PresentationStyled>
 );
+
+export default React.memo(Presentation)

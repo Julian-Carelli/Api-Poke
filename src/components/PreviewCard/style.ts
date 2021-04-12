@@ -7,9 +7,18 @@ export const PreviewCardStyled = styled.section.attrs({
 display: flex;
 flex-direction: column;
 text-align: center;
+border: 2px solid black;
+border-radius: 17px;
+background-color: aliceblue;
+
 
 .PreviewCard__title {
     font-size:33px;
+}
+
+.PreviewCard__img {
+    width:200px;
+    height:200px;
 }
 
 `;

@@ -4,7 +4,6 @@ export const HeaderStyled = styled.section.attrs({
     className:'Header container'
 })`
 
-width:80%;
 padding:45px 0px;
 
 

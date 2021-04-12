@@ -1,11 +1,26 @@
-/* import React from 'react';
-import { render} from '@testing-library/react';
-import {Presentation} from '../index';
+import React from 'react';
+import { render, cleanup} from '@testing-library/react';
+import Presentation from '../index';
 
 describe('Presentation', () => {
-  it('render correctly', () => {
-      const {getByTestId} = render(<Presentation/>);
-
-      expect(getByTestId('Presentation')).toBeTruthy()
+  afterEach(() => {
+      cleanup()
   })
-}) */
+
+
+  it('render correctly', () => {
+
+    const mockCollectionPokemons = jest.fn();
+
+    const mockCollectionPokemon = []
+    
+
+    const {getByTestId} = render(
+    <Presentation 
+    collectionPokemonsView={mockCollectionPokemons} 
+    collectionPokemonsView={mockCollectionPokemon} 
+    />);
+
+    expect(getByTestId('Presentation')).toBeTruthy()
+  })
+})

@@ -5,6 +5,10 @@ import {Search} from '../index';
 
 describe('Search', () => {
 
+    afterEach(() => {
+        cleanup()
+    })
+
     it('render correctly', () => {
         const {getByTestId, getByPlaceholderText} = render(<Search/>);
 
@@ -12,13 +16,22 @@ describe('Search', () => {
         expect(getByPlaceholderText("Ingresa el nombre a buscar")).toBeTruthy()
     })
 
-    it('updates on change', () => {
-        const {getByPlaceholderText} = render(<Search/>)
+    it('update on change', () => {
+        const {getByTestId, getByPlaceholderText} = render(<Search/>);
+
         const searchInput = getByPlaceholderText('Ingresa el nombre a buscar')
 
         fireEvent.change(searchInput, {target:{value:"test"}})
 
         expect(searchInput.value).toBe('test')
     })
+
+    it('update on click', () => {
+        const {getByTestId, getByPlaceholderText} = render(<Search/>);
+
+        fireEvent.click(getByTestId('btn'))
+
+    })
+
 
 })

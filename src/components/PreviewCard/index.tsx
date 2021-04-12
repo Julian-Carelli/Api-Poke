@@ -11,7 +11,7 @@ export const PreviewCard = (props:IProps) => (
         </div>
         <div className="PreviewCard__information">
             <div className="PreviewCard__background">
-                <img width="200px;" height="200px;" className="PreviewCard__img" src={props.pokemonSprite} alt={props.pokemonName}></img>
+                <img className="PreviewCard__img" src={props.pokemonSprite} alt={props.pokemonName}></img>
             </div>
         </div>
         <div className="PreviewCard__moreInformation">
