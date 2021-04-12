@@ -6,7 +6,6 @@ import {Search} from '../../components/Search/index';
 
 import arrayFilter from '../../utils/arrayFilter';
 
-
 export const Home = () => {
 
     const [pokemons, setPokemons] = useState<Array<object> | null>([]);
@@ -112,22 +111,19 @@ export const Home = () => {
 
     }, []);
 
+    const modalOriginal = document.getElementById('modal');
+    modalOriginal.style.position = "";
+    modalOriginal.style.top = "";
+    modalOriginal.style.width = "";
+    modalOriginal.style.backgroundColor = "";
+    modalOriginal.style.height = "";
 
     if(modal === true){
-        const modal = document.getElementById('modal');
-        modal.style.position = "fixed";
-        modal.style.top = "0px";
-        modal.style.width = "100%";
-        modal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-        modal.style.height = "100%";
-    }
-    else {
-        const modal = document.getElementById('modal');
-        modal.style.position = "";
-        modal.style.top = "";
-        modal.style.width = "";
-        modal.style.backgroundColor = "";
-        modal.style.height = "";
+        modalOriginal.style.position = "fixed";
+        modalOriginal.style.top = "0px";
+        modalOriginal.style.width = "100%";
+        modalOriginal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        modalOriginal.style.height = "100%";
     }
 
 

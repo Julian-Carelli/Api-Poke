@@ -5,18 +5,15 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
+    publicPath:'/'
   },
 
   mode:'production',
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
-  },
-
-  devServer: {
-    contentBase: "./dist",
   },
 
   module: {
@@ -71,7 +68,8 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve('./dist/index.html'),
+      template: path.resolve('./public/index.html'),
+      filename:'index.html'
     }),
 
   ],
