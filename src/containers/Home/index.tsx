@@ -1,0 +1,153 @@
+import React, { useEffect, useState } from 'react';
+
+import {Header} from '../../components/Header/index';
+import {Presentation} from '../../components/Presentation/index';
+import {Search} from '../../components/Search/index';
+
+import arrayFilter from '../../utils/arrayFilter';
+
+
+export const Home = () => {
+
+    const [pokemons, setPokemons] = useState<Array<object> | null>([]);
+    const [pokemonsView, setPokemonsView] = useState<Array<object> | null>(([]));
+    const [pokemonView, setPokemonView] = useState<Array<object> | null>(([]));
+    const [pokemonName, setPokemonName] = useState<string | undefined>((undefined));
+    const [modal, setModal] = useState<boolean | undefined>((false));
+    const [loading, setLoading] = useState<boolean | undefined>(false);
+    const [error, setError] = useState<string | undefined>(undefined);
+
+    const getPokemons = async () => {
+
+        setLoading(true);
+
+        const urlAllPokemon = 'https://pokeapi.co/api/v2/pokemon?limit=1118';
+
+        try{
+
+            const pokemons = await fetch(urlAllPokemon);
+            const data = await pokemons.json();
+
+            setPokemons(data.results);
+            setPokemonsView(data.results);
+            setLoading(false);
+
+        } catch(err) {
+
+            setError(err.message);
+            setLoading(false);
+
+
+        }  
+
+    };
+
+    const searchPreviewPokemon = () => {
+
+        if(pokemonName.length -1 < 1){
+            getPokemons();
+        }
+
+        const inmutableCharacters:Array<object> = [...pokemons];
+
+        const filterPokemons:Array<object> = arrayFilter(inmutableCharacters, pokemonName);
+
+        return setPokemonsView(filterPokemons);
+
+    };
+
+    const searchCompletePokemon = async (pokemonId) => {
+        setLoading(true);
+
+        const urlPokemon = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
+
+        try {
+
+            const pokemon = await fetch(urlPokemon);
+            const data = await pokemon.json()
+
+            setPokemonView(data);
+            setLoading(false);
+
+            
+        } catch (err) {
+            
+            setError(err.message);
+            setLoading(false);
+
+        }
+
+        
+    };
+
+    const handleOnChange = (e:any) => {
+
+        const {value} = e.target;
+
+        setPokemonName(value);
+
+        searchPreviewPokemon();
+
+    };
+
+    const handleModal = async (e:any) => {
+
+        if(modal === false){
+
+            const pokemonId = e.target.id.slice(0, 5);
+
+            await searchCompletePokemon(pokemonId);
+
+            return setModal(true);
+
+        }
+
+
+        setModal(false);
+
+    };
+
+    useEffect(() => {
+        getPokemons();
+
+    }, []);
+
+
+    if(modal === true){
+        const modal = document.getElementById('modal');
+        modal.style.position = "fixed";
+        modal.style.top = "0px";
+        modal.style.width = "100%";
+        modal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        modal.style.height = "100%";
+    }
+    else {
+        const modal = document.getElementById('modal');
+        modal.style.position = "";
+        modal.style.top = "";
+        modal.style.width = "";
+        modal.style.backgroundColor = "";
+        modal.style.height = "";
+    }
+
+
+    return(
+        <div className="Home container">
+            <Header></Header>
+            <Search
+                handleOnChange={handleOnChange}
+                pokemonName={pokemonName}
+            ></Search>
+
+            <Presentation
+                collectionPokemonsView={pokemonsView}
+                collectionPokemonView={pokemonView}
+                handleModal={handleModal}
+                stateModal={modal}
+                stateLoading={loading}
+            ></Presentation>
+        </div>
+    )
+
+
+}
