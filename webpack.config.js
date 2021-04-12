@@ -1,13 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[fullhash].js',
+    filename: 'bundle.js',
   },
 
   mode:'production',
@@ -16,11 +15,29 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
 
+  devServer: {
+    contentBase: "./dist",
+  },
+
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
         loader: "ts-loader",
+      },
+
+      {
+        test:/\.(css|scss)$/,
+        use:[
+          'style-loader',
+          {
+            loader:'css-loader',
+            options:{
+              importLoaders:1
+            }
+          },
+            'sass-loader'
+        ]
       },
 
       {
@@ -49,21 +66,13 @@ module.exports = {
         loader: "source-map-loader",
       },
           
-      {
-        test: /\.css$/,
-        loader: "css-loader",
-      },
     ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public", "index.html"),
+      template: path.resolve('./dist/index.html'),
     }),
-
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns:['dist/main.*.js', 'dist/js/module.*']
-    })
 
   ],
     
