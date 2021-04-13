@@ -5,14 +5,13 @@ export const CompleteCardStyled = styled.section.attrs({
 })`
 
 width:80%;
-padding:45px 0px;
+padding:10px 0px;
 
 
 .CompleteCard__title {
     color:white;
     font-size: 60px;
 }
-
 
 .CompleteCard__text_type {
     font-size:25px;
@@ -44,7 +43,7 @@ padding:45px 0px;
 }
 
 .CompleteCard__information{
-    padding:25px 0px;
+    padding:0px 0px;
 }
 
 .CompleteCard__title_stats {

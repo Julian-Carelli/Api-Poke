@@ -6,8 +6,7 @@ export const HeaderStyled = styled.section.attrs({
 
 padding:45px 0px;
 
-@media screen and (max-width:480px) and (min-width:0px){
-    padding:45px 0px;
+@media screen and (max-width:768px){
     text-align:center;
 }
 

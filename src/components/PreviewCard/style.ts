@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const PreviewCardStyled = styled.section.attrs({
+export const PreviewCardStyled = styled.div.attrs({
     className:'PreviewCard pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4'
 })`
 

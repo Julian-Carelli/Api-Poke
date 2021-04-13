@@ -182,19 +182,7 @@ export const Home = () => {
      * la informacion completa del pokemon
      */
 
-    if(modal ===  true){
-        return ReactDOM.createPortal(
-            <Modal
-                handleModal={handleModal} 
-                stateModal={modal}>
-
-                    <CompleteCard
-                    collectionPokemonView={pokemonView}
-                    ></CompleteCard>       
-
-            </Modal>, document.getElementById('modal')
-        )
-    }
+    
 
 
     return(
@@ -214,6 +202,19 @@ export const Home = () => {
                 isReady={isready}
                 stateLoading={loading}
             ></Presentation>
+
+            {modal === true && 
+                ReactDOM.createPortal(
+                    <Modal
+                        handleModal={handleModal} 
+                        stateModal={modal}>
+
+                            <CompleteCard
+                            collectionPokemonView={pokemonView}
+                            ></CompleteCard>       
+
+                    </Modal>, document.getElementById('modal'))
+            }
             </div>
 
         </ThemeProvider>

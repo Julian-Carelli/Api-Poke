@@ -1,33 +1,58 @@
-<h1>Api-Poke</h1>
+# Poke Api
 
-<p>Un proyecto que trabaja con la API "PokeAPi" para mostrar y buscar pokemones de una manera sencilla y eficaz.</p>
+Un proyecto que trabaja con la API "PokeAPi" para mostrar y buscar pokemones de una manera sencilla y eficaz. 
 
-# Como correr el proyecto?
+## Comenzando 🚀
 
+_clonando el proyecto
 
-# Clonando el proyecto
-
+```
 git clone git@github.com:Julian-Carelli/Api-Poke.git
+```
 
+### Pre-requisitos 📋
 
-# Instalando todas las dependencias que tenga el proyecto
+```
+node -v v15.14.0
+npm -v 7.9.0
+```
 
+### Instalación 🔧
+
+Para poder correr el proyecto de forma local
+
+instalar todas las dependencias del proyecto
+
+```
 npm i
+```
 
+ejecutar el comando para el ambiente de desarrollo
 
-# Para hacer correr el proyecto de manera local 
-
+```
 npm run build:dev
+```
 
-. Se utiliza el puerto 3000 para poder ejecutar este comando.
+## Ejecutando las pruebas ⚙️
 
+_Para ejecutar las pruebas
 
-# Para testear con Jest y Testing Library 
-
+```
 npm run test
+```
 
-Y ahora listo para usar :D
+### Analice las pruebas end-to-end 🔩
 
-Link Del proyecto: <a href="https://api-poke.netlify.app/">Api-Poke</a>
+_Las pruebas comprueban el renderizado y ciertas funciones de todos los componentes y gracias a circleci que luego lo prueba todo de manera automatica
+
+## Construido con 🛠️
+
+_En este proyecto se trabajaron con las siguientes tecnologías: Typescript, Javascript, React, Styled Component, Bootstrap 4, Jest, Testing Library, y Webpack.
+
+
+⌨️ con ❤️ por [julian-carelli](https://github.com/julian-carelli) 😊
+
+Link del proyecto: [Api-Poke](https://api-poke.netlify.app/)
+
 
 
