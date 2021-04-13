@@ -14,8 +14,7 @@ export const Search = (props:IProps) => (
                 <button onClick={props.searchPokemon} data-testid="test__btn" className="Search__button btn btn-primary">Buscar</button>
             </div>
             <div className="Search__content__social-media">
-                <a className="Search__content__link" target="_blank" href="https://github.com/Julian-Carelli"><i className="Search__content__icon fab fa-github"></i></a>
-                <a className="Search__content__link" target="_blank" href="https://www.linkedin.com/in/julian-carelli/"><i className="Search__content__icon fab fa-linkedin"></i></a>
+                <a href="https://github.com/Julian-Carelli/Api-Poke" target="_blank">Ir al repositorio</a>
             </div> 
         </div>
     </SearchStyled >

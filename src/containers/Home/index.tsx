@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import * as ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
-import theme from '../../assets/variables/style';
-
 
 import {Header} from '../../components/Header/index';
 import Presentation from '../../components/Presentation/index';
@@ -21,7 +18,6 @@ export const Home = () => {
     const [modal, setModal] = useState<boolean | undefined>(false);
     const [loading, setLoading] = useState<boolean | undefined>(false);
     const [isready, setIsReady] = useState<boolean | undefined>(false);
-    const [error, setError] = useState<string | undefined>(undefined);
     
 
     /**
@@ -44,7 +40,7 @@ export const Home = () => {
 
         } catch(err) {
 
-            setError(err.message);
+            console.error(err.message);
             setLoading(false);
 
 
@@ -88,7 +84,7 @@ export const Home = () => {
             
         } catch (err) {
             
-            setError(err.message);
+            console.error(err.message);
             setLoading(false);
 
         }
@@ -186,8 +182,7 @@ export const Home = () => {
 
 
     return(
-        <ThemeProvider theme={theme}>
-            <div data-testid="test__home" className="Home container">
+        <div data-testid="test__home" className="Home container">
             <Header></Header>
             <Search
                 handleOnChange={handleOnChange}
@@ -215,9 +210,8 @@ export const Home = () => {
 
                     </Modal>, document.getElementById('modal'))
             }
-            </div>
+        </div>
 
-        </ThemeProvider>
         
     )
 };

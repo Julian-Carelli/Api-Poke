@@ -9,6 +9,7 @@ export const SearchStyled = styled.section.attrs({
     @media screen and (max-width:768px){
         display:flex;
         justify-content:center;
+        flex-direction:column;
     }
 }
 
@@ -32,9 +33,9 @@ export const SearchStyled = styled.section.attrs({
 
 .Search__input {
     width:500px;
-    max-width:100%;
     @media screen and (max-width:768px){
-        max-width:60%;
+        max-width:500px;
+        width:100%;
     }
 
 }
@@ -45,8 +46,24 @@ export const SearchStyled = styled.section.attrs({
 
 }
 
-.Search__content__icon {
-    width:50px;
+.Search__content__social-media {
+    display: flex;
+    align-items: center;
+    padding-left: 250px;
+    font-size: 20px;
+    @media screen and (max-width:1200px){
+        padding-left:50px;
+    }
+    @media screen and (max-width:992px){
+        margin:auto;
+        padding:25px 45px;
+    }
+    @media screen and (max-width:768px){
+        display:flex;
+        justify-content:center;
+        padding-left:0px;
+        padding:25px;
+    }
 }
 
 `;
