@@ -8,7 +8,8 @@
     "build": "webpack",
     "build:production": "webpack serve",
     "build:dev": "webpack serve --config ./webpack.dev.config.js",
-    "test": "jest --watchAll",
+    "test": "jest --watchAll ",
+    "forceExit": "jest --forceExit",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
