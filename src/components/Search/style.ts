@@ -16,8 +16,13 @@ export const SearchStyled = styled.section.attrs({
     width:500px;
 }
 
+.Search__function {
+    padding-left:20px;
+}
+
 .Search__button {
     width:150px;
+
 }
 
 `;

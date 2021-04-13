@@ -10,9 +10,13 @@ export const Search = (props:IProps) => (
             <div className="Search__find">
                 <input data-testid="test__search" className="Search__input form-control" onChange={props.handleOnChange}  type="text" placeholder="Ingresa el nombre a buscar"></input>
             </div>
-            <div className="Search__function pl-3">
+            <div className="Search__function">
                 <button onClick={props.searchPokemon} data-testid="test__btn" className="Search__button btn btn-primary">Buscar</button>
             </div>
+            <div className="Search__content__social-media">
+                <a className="Search__content__link" target="_blank" href="https://github.com/Julian-Carelli"><i className="Search__content__icon fab fa-github"></i></a>
+                <a className="Search__content__link" target="_blank" href="https://www.linkedin.com/in/julian-carelli/"><i className="Search__content__icon fab fa-linkedin"></i></a>
+            </div> 
         </div>
     </SearchStyled >
 );

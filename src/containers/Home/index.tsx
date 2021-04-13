@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import * as ReactDOM from 'react-dom';
+import { ThemeProvider } from 'styled-components';
+import theme from '../../assets/variables/style';
+
 
 import {Header} from '../../components/Header/index';
 import Presentation from '../../components/Presentation/index';
@@ -150,8 +153,8 @@ export const Home = () => {
 
 
     return(
-        
-        <div data-testid="test__home" className="Home container">
+        <ThemeProvider theme={theme}>
+            <div data-testid="test__home" className="Home container">
             <Header></Header>
             <Search
                 handleOnChange={handleOnChange}
@@ -165,6 +168,9 @@ export const Home = () => {
                 handleModal={handleModal}
                 stateLoading={loading}
             ></Presentation>
-        </div>
+            </div>
+
+        </ThemeProvider>
+        
     )
 };

@@ -13,6 +13,7 @@ padding:45px 0px;
     font-size: 60px;
 }
 
+
 .CompleteCard__text_type {
     font-size:25px;
     margin-bottom:0px;
@@ -30,6 +31,11 @@ padding:45px 0px;
     color:white;
 }
 
+.CompleteCard__img {
+    width:200px;
+    height:200px;
+}
+
 .CompleteCard__arrow {
     background:white;
     height:3px;
@@ -39,11 +45,6 @@ padding:45px 0px;
 
 .CompleteCard__information{
     padding:25px 0px;
-}
-
-.CompleteCard__img {
-    width:200px;
-    height:200px;
 }
 
 .CompleteCard__title_stats {

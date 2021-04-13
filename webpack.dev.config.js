@@ -62,7 +62,7 @@ module.exports = {
 
       {
         test: /\.(gif|jpg)$/,
-        loader: 'url-loader',//url-loader?limit=30000
+        loader: 'url-loader',
         options: {
             limit:30000,
             name: '[path][name].[ext]?[hash]',

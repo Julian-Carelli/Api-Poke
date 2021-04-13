@@ -11,8 +11,13 @@ padding: 90px 0px;
 .NotFound__image {
     width: 80%;
     border-radius: 15px;
-    height: 500px;
+    max-height: 500px;
+    @media screen and (max-width:480px){
+        width:100%;
+    }
 }
+
+
 
 `;
 
