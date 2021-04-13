@@ -21,15 +21,11 @@ export const Home = () => {
     const [modal, setModal] = useState<boolean | undefined>((false));
     const [loading, setLoading] = useState<boolean | undefined>(false);
     const [error, setError] = useState<string | undefined>(undefined);
+    
 
-
-    const escapeModal = e => {
-        if(e.key === "Escape") {
-            setModal(false)
-        }
-    };
-
-
+    /**
+     * Funcion que busca traer a todos los pokemones haciendo una busqueda parcial de la informacion
+     */
     const getPokemons = async () => {
 
         setLoading(true);
@@ -55,6 +51,11 @@ export const Home = () => {
 
     };
 
+    
+    /**
+     * Funcion encargada de manejar la busqueda de pokemons
+     * @returns retorna el estado pokemonsView actualizado
+     */
     const searchPreviewPokemon = () => {
 
         const inmutableCharacters:any = [...pokemons];
@@ -64,6 +65,11 @@ export const Home = () => {
         return setPokemonsView(filterPokemons);
 
     };
+
+    /**
+     * Funcion que busca la informacion completa de cada pokemon
+     * @param pokemonId id con el que se busca a cada pokemon
+     */
 
     const searchCompletePokemon = async (pokemonId) => {
         setLoading(true);
@@ -89,6 +95,12 @@ export const Home = () => {
         
     };
 
+    /**
+     * Funcion que maneja el valor del input
+     * 
+     * 
+     */
+
     const handleOnChange = (e:any) => {
 
         const {value} = e.target;
@@ -96,6 +108,10 @@ export const Home = () => {
         setPokemonName(value);
 
     };
+
+    /**
+     * Funcion que maneja que va a pasar cuando el estado modal cambie
+     */
 
     const handleModal = async (e:any) => {
 
@@ -114,12 +130,35 @@ export const Home = () => {
 
     };
 
+    
+    // UseEffect es usado para que pueda ni bien se renderize el componente, llamar la funcion getPokemons()
+
     useEffect(() => {
         getPokemons();
 
     }, []);
 
+
+    /**
+     * Funcion que sirve para poder utilizar la tecla ESCAPE cuando se quiera abrir y cerrar el Modal
+     * @param e evento para detectar que tecla se esta utilizando
+     */
+
+     const escapeModal = e => {
+        if(e.key === "Escape") {
+            setModal(false)
+        }
+    };
+
+
+    /** evento "keydown" para detectar la tecla presiona y que se ejecute la funcion escapeModal */
+
     document.addEventListener('keydown', escapeModal);
+
+
+    /** Estilos del modal que seran o no reemplazados a medida que el estado del mismo, cambie entre verdadero
+     * a falso
+     */
     
     const modalOriginal = document.getElementById('modal');
     modalOriginal.style.position = "";
@@ -136,6 +175,10 @@ export const Home = () => {
         modalOriginal.style.height = "100%";
     }
 
+
+    /** Dependiendo del estado del modal, se podra mostrar el component Modal con sus respectivo componente para mostrar 
+     * la informacion completa del pokemon
+     */
 
     if(modal ===  true){
         return ReactDOM.createPortal(
