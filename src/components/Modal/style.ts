@@ -5,7 +5,7 @@ export const ModalStyled = styled.section.attrs({
 })`
 
 width:60%;
-padding:45px;
+padding:40px;
 @media screen and (max-width:728px){
     width:100%;
 }

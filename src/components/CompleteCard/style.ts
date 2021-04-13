@@ -5,7 +5,6 @@ export const CompleteCardStyled = styled.section.attrs({
 })`
 
 width:80%;
-padding:10px 0px;
 
 
 .CompleteCard__title {
@@ -16,6 +15,7 @@ padding:10px 0px;
 .CompleteCard__text_type {
     font-size:25px;
     margin-bottom:0px;
+    padding-left:15px;
 }
 
 .CompleteCard__text_front, .CompleteCard__text_back {
@@ -31,8 +31,8 @@ padding:10px 0px;
 }
 
 .CompleteCard__img {
-    width:200px;
-    height:200px;
+    width:150px;
+    height:150px;
 }
 
 .CompleteCard__arrow {

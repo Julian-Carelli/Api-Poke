@@ -9,10 +9,10 @@ export const CompleteCard = (props:IProps) => (
    <CompleteCardStyled data-testid="test__completeCard">
        
         <div className="CompleteCard__header row">
-            <div className="CompleteCard__presentation col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div className="CompleteCard__presentation col-sm-12 col-md-12 col-lg-10 col-xl-10">
                 <h2 className="CompleteCard__title">{props.collectionPokemonView.name}</h2>
             </div>
-            <div className="CompleteCard__type col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div className="CompleteCard__type col-sm-12 col-md-12 col-lg-2 col-xl-2">
                 {props.collectionPokemonView.types.map((pokemon, index) => (
                     <p key={index} className="CompleteCard__text_type">{pokemon.type.name}</p>
                 ))}

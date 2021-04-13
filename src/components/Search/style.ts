@@ -40,10 +40,13 @@ export const SearchStyled = styled.section.attrs({
 }
 
 
-
 .Search__button {
     width:150px;
 
+}
+
+.Search__content__icon {
+    width:50px;
 }
 
 `;
