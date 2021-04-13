@@ -1,3 +1,3 @@
 export interface IProps {
-    collectionPokemonView:Array<Object>,
+    collectionPokemonView:any,
 }

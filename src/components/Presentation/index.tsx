@@ -17,7 +17,7 @@ const Presentation = (props:IProps) => (
             <Loading/>
             }
 
-            {props.collectionPokemonsView.length < 1 && (
+            {props.collectionPokemonsView.length < 1 && props.isReady === true &&(
                 <NotFound></NotFound>  
             )}
             

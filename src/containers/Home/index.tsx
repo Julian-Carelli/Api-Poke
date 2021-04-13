@@ -15,11 +15,12 @@ import arrayFilter from '../../utils/arrayFilter';
 export const Home = () => {
 
     const [pokemons, setPokemons] = useState<Array<object> | null>([]);
-    const [pokemonsView, setPokemonsView] = useState<Array<object> | null>(([]));
-    const [pokemonView, setPokemonView] = useState<Array<object> | null>(([]));
-    const [pokemonName, setPokemonName] = useState<string | undefined>((undefined));
-    const [modal, setModal] = useState<boolean | undefined>((false));
+    const [pokemonsView, setPokemonsView] = useState<Array<object> | null>([]);
+    const [pokemonView, setPokemonView] = useState<Array<object> | null>([]);
+    const [pokemonName, setPokemonName] = useState<string | undefined>(undefined);
+    const [modal, setModal] = useState<boolean | undefined>(false);
     const [loading, setLoading] = useState<boolean | undefined>(false);
+    const [isready, setIsReady] = useState<boolean | undefined>(false);
     const [error, setError] = useState<string | undefined>(undefined);
     
 
@@ -106,6 +107,7 @@ export const Home = () => {
         const {value} = e.target;
 
         setPokemonName(value);
+        setIsReady(true);
 
     };
 
@@ -209,6 +211,7 @@ export const Home = () => {
                 collectionPokemonsView={pokemonsView}
                 collectionPokemonView={pokemonView}
                 handleModal={handleModal}
+                isReady={isready}
                 stateLoading={loading}
             ></Presentation>
             </div>
