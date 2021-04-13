@@ -4709,7 +4709,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CompleteCard = void 0;
 var React = __importStar(__webpack_require__(526));
 var style_1 = __webpack_require__(305);
-var CompleteCard = function (props) { return (React.createElement(style_1.CompleteCardStyled, { "data-testid": "CompleteCard" },
+var CompleteCard = function (props) { return (React.createElement(style_1.CompleteCardStyled, { "data-testid": "test__completeCard" },
     React.createElement("div", { className: "CompleteCard__header row" },
         React.createElement("div", { className: "CompleteCard__presentation col-sm-12 col-md-12 col-lg-4 col-xl-4" },
             React.createElement("h2", { className: "CompleteCard__title" }, props.collectionPokemonView.name)),
@@ -4718,14 +4718,14 @@ var CompleteCard = function (props) { return (React.createElement(style_1.Comple
     React.createElement("div", { className: "CompleteCard__information row" },
         React.createElement("div", { className: "CompleteCard__background_front col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4" },
             React.createElement("div", { className: "CompleteCard__background" },
-                React.createElement("img", { width: "200px;", height: "200px;", className: "CompleteCard__img", src: props.collectionPokemonView.sprites.front_default, alt: props.collectionPokemonView.name })),
+                React.createElement("img", { className: "CompleteCard__img", src: props.collectionPokemonView.sprites.front_default, alt: props.collectionPokemonView.name })),
             React.createElement("div", null,
                 React.createElement("p", { className: "CompleteCard__text_front" },
                     props.collectionPokemonView.name,
                     " de frente."))),
         props.collectionPokemonView.sprites.back_default &&
             React.createElement("div", { className: "CompleteCard__background_back col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4" },
-                React.createElement("img", { width: "200px;", height: "200px;", className: "CompleteCard__img", src: props.collectionPokemonView.sprites.back_default, alt: props.collectionPokemonView.name }),
+                React.createElement("img", { className: "CompleteCard__img", src: props.collectionPokemonView.sprites.back_default, alt: props.collectionPokemonView.name }),
                 React.createElement("p", { className: "CompleteCard__text_back" },
                     props.collectionPokemonView.name,
                     " de atr\u00E1s."))),
@@ -4762,7 +4762,7 @@ exports.CompleteCardStyled = void 0;
 var styled_components_1 = __importDefault(__webpack_require__(993));
 exports.CompleteCardStyled = styled_components_1.default.section.attrs({
     className: 'CompleteCard container'
-})(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n\nwidth:80%;\npadding:45px 0px;\n\n\n.CompleteCard__title {\n    color:white;\n    font-size: 60px;\n}\n\n.CompleteCard__text_type {\n    font-size:25px;\n    margin-bottom:0px;\n}\n\n.CompleteCard__text_front, .CompleteCard__text_back {\n    font-size:18px;\n    color:white;\n}\n\n.CompleteCard__type {\n    display:flex;\n    align-items:center;\n    justify-content:space-evenly;\n    color:white;\n}\n\n.CompleteCard__arrow {\n    background:white;\n    height:3px;\n    border-radius:15px;\n    width:100%;\n}\n\n.CompleteCard__information{\n    padding:25px 0px;\n}\n\n.CompleteCard__title_stats {\n    width:80%;\n    color:white;\n}\n\n.CompleteCard__stats {\n    color:black;\n}\n\n.CompleteCard__text {\n    font-size:18px;\n}\n\n.CompleteCard__prop {\n    font-size: 15px;\n}\n\n.CompleteCard__exp {\n    padding:0px 5px;\n    background-color:royalblue;\n    width:100%;\n    border-radius: 15px;\n}\n\n"], ["\n\nwidth:80%;\npadding:45px 0px;\n\n\n.CompleteCard__title {\n    color:white;\n    font-size: 60px;\n}\n\n.CompleteCard__text_type {\n    font-size:25px;\n    margin-bottom:0px;\n}\n\n.CompleteCard__text_front, .CompleteCard__text_back {\n    font-size:18px;\n    color:white;\n}\n\n.CompleteCard__type {\n    display:flex;\n    align-items:center;\n    justify-content:space-evenly;\n    color:white;\n}\n\n.CompleteCard__arrow {\n    background:white;\n    height:3px;\n    border-radius:15px;\n    width:100%;\n}\n\n.CompleteCard__information{\n    padding:25px 0px;\n}\n\n.CompleteCard__title_stats {\n    width:80%;\n    color:white;\n}\n\n.CompleteCard__stats {\n    color:black;\n}\n\n.CompleteCard__text {\n    font-size:18px;\n}\n\n.CompleteCard__prop {\n    font-size: 15px;\n}\n\n.CompleteCard__exp {\n    padding:0px 5px;\n    background-color:royalblue;\n    width:100%;\n    border-radius: 15px;\n}\n\n"])));
+})(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n\nwidth:80%;\npadding:45px 0px;\n\n\n.CompleteCard__title {\n    color:white;\n    font-size: 60px;\n}\n\n.CompleteCard__text_type {\n    font-size:25px;\n    margin-bottom:0px;\n}\n\n.CompleteCard__text_front, .CompleteCard__text_back {\n    font-size:18px;\n    color:white;\n}\n\n.CompleteCard__type {\n    display:flex;\n    align-items:center;\n    justify-content:space-evenly;\n    color:white;\n}\n\n.CompleteCard__arrow {\n    background:white;\n    height:3px;\n    border-radius:15px;\n    width:100%;\n}\n\n.CompleteCard__information{\n    padding:25px 0px;\n}\n\n.CompleteCard__img {\n    width:200px;\n    height:200px;\n}\n\n.CompleteCard__title_stats {\n    width:80%;\n    color:white;\n}\n\n.CompleteCard__stats {\n    color:black;\n}\n\n.CompleteCard__text {\n    font-size:18px;\n}\n\n.CompleteCard__prop {\n    font-size: 15px;\n}\n\n.CompleteCard__exp {\n    padding:0px 5px;\n    background-color:royalblue;\n    width:100%;\n    border-radius: 15px;\n}\n\n"], ["\n\nwidth:80%;\npadding:45px 0px;\n\n\n.CompleteCard__title {\n    color:white;\n    font-size: 60px;\n}\n\n.CompleteCard__text_type {\n    font-size:25px;\n    margin-bottom:0px;\n}\n\n.CompleteCard__text_front, .CompleteCard__text_back {\n    font-size:18px;\n    color:white;\n}\n\n.CompleteCard__type {\n    display:flex;\n    align-items:center;\n    justify-content:space-evenly;\n    color:white;\n}\n\n.CompleteCard__arrow {\n    background:white;\n    height:3px;\n    border-radius:15px;\n    width:100%;\n}\n\n.CompleteCard__information{\n    padding:25px 0px;\n}\n\n.CompleteCard__img {\n    width:200px;\n    height:200px;\n}\n\n.CompleteCard__title_stats {\n    width:80%;\n    color:white;\n}\n\n.CompleteCard__stats {\n    color:black;\n}\n\n.CompleteCard__text {\n    font-size:18px;\n}\n\n.CompleteCard__prop {\n    font-size: 15px;\n}\n\n.CompleteCard__exp {\n    padding:0px 5px;\n    background-color:royalblue;\n    width:100%;\n    border-radius: 15px;\n}\n\n"])));
 var templateObject_1;
 
 
@@ -4796,8 +4796,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Header = void 0;
 var React = __importStar(__webpack_require__(526));
 var style_1 = __webpack_require__(122);
-var Header = function () { return (React.createElement(style_1.HeaderStyled, { "data-testid": "Header" },
-    React.createElement("div", { className: "Header__presentation" },
+var Header = function () { return (React.createElement(style_1.HeaderStyled, null,
+    React.createElement("div", { "data-testid": "test__header", className: "Header__presentation" },
         React.createElement("h2", { className: "Header__title" }, "Pokemon Finder")),
     React.createElement("div", { className: "Header__info" },
         React.createElement("p", { className: "Header__text" }, "El que quiere Pokemons, que los busque.")))); };
@@ -4898,18 +4898,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Modal = void 0;
 var React = __importStar(__webpack_require__(526));
-var ReactDOM = __importStar(__webpack_require__(961));
 var style_1 = __webpack_require__(230);
-var Modal = function (props) {
-    if (props.stateModal === false) {
-        return null;
-    }
-    return ReactDOM.createPortal(React.createElement(style_1.ModalStyled, { "data-testid": "Modal" },
-        React.createElement("div", { className: "Modal__container" },
-            React.createElement("div", { className: "Modal__function" },
-                React.createElement("button", { onClick: function () { return props.handleModal(); }, className: "Modal__close_button btn btn-primary" }, "Cerrar")),
-            props.children)), document.getElementById('modal'));
-};
+var Modal = function (props) { return (React.createElement(style_1.ModalStyled, { "data-testid": "test__modal" },
+    React.createElement("div", { className: "Modal__container" },
+        React.createElement("div", { className: "Modal__function" },
+            React.createElement("button", { "data-testid": "test__btn", onClick: function () { return props.handleModal(); }, className: "Modal__close_button btn btn-primary" }, "Cerrar")),
+        props.children))); };
 exports.Modal = Modal;
 
 
@@ -4966,8 +4960,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NotFound = void 0;
 var React = __importStar(__webpack_require__(526));
 var style_1 = __webpack_require__(491);
-var NotFound = function () { return (React.createElement(style_1.NotFoundStyled, { "data-testid": "Not Found" },
-    React.createElement("img", { src: "https://ibb.co/VgGwSVd", className: "NotFound__image" }))); };
+var NotFound = function () { return (React.createElement(style_1.NotFoundStyled, { "data-testid": "test__notFound" },
+    React.createElement("img", { src: "https://i.postimg.cc/tRMGJJN3/NotFound.png", className: "NotFound__image" }))); };
 exports.NotFound = NotFound;
 
 
@@ -5024,31 +5018,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Presentation = void 0;
 var React = __importStar(__webpack_require__(526));
 var style_1 = __webpack_require__(631);
 var getSprites_1 = __importDefault(__webpack_require__(926));
 var getPokemonId_1 = __importDefault(__webpack_require__(962));
 var index_1 = __webpack_require__(461);
-var index_2 = __webpack_require__(849);
-var index_3 = __webpack_require__(16);
-var index_4 = __webpack_require__(342);
-var index_5 = __webpack_require__(393);
+var index_2 = __webpack_require__(342);
+var index_3 = __webpack_require__(393);
 var Presentation = function (props) { return (React.createElement(style_1.PresentationStyled, { "data-testid": "Presentation" },
     React.createElement("div", { className: "Presentation__row row" },
         props.stateLoading === true &&
-            React.createElement(index_5.Loading, null),
-        props.stateModal === true &&
-            React.createElement(index_3.Modal, { handleModal: props.handleModal, stateModal: props.stateModal },
-                React.createElement(index_2.CompleteCard, { collectionPokemonView: props.collectionPokemonView })),
-        props.collectionPokemonsView.length < 1 && (React.createElement(index_4.NotFound, null)),
+            React.createElement(index_3.Loading, null),
+        props.collectionPokemonsView.length < 1 && (React.createElement(index_2.NotFound, null)),
         props.collectionPokemonsView.map(function (pokemon) {
             var url = pokemon.url, name = pokemon.name;
             var id = getPokemonId_1.default(url);
             var pokemonSprite = getSprites_1.default(id);
             return (React.createElement(index_1.PreviewCard, { handleModal: props.handleModal, pokemonName: name, pokemonSprite: pokemonSprite, pokemonId: id }));
         })))); };
-exports.Presentation = Presentation;
+exports.default = React.memo(Presentation);
 
 
 /***/ }),
@@ -5112,7 +5100,7 @@ var PreviewCard = function (props) { return (React.createElement(style_1.Preview
             React.createElement("img", { className: "PreviewCard__img", src: props.pokemonSprite, alt: props.pokemonName }))),
     React.createElement("div", { className: "PreviewCard__moreInformation" },
         React.createElement("div", { className: "PreviewCard__modal" },
-            React.createElement("button", { className: "btn btn-primary", id: props.pokemonId, onClick: function (e) { return props.handleModal(e); }, "data-testid": "btn" }, "Ver mas"))))); };
+            React.createElement("button", { className: "btn btn-primary", id: props.pokemonId, onClick: function (e) { return props.handleModal(e); }, "data-testid": "test__btn" }, "Ver mas"))))); };
 exports.PreviewCard = PreviewCard;
 
 
@@ -5172,9 +5160,9 @@ var style_1 = __webpack_require__(806);
 var Search = function (props) { return (React.createElement(style_1.SearchStyled, null,
     React.createElement("div", { className: "Search__row row" },
         React.createElement("div", { className: "Search__find" },
-            React.createElement("input", { "data-testid": "Search__input", className: "Search__input form-control", onChange: props.handleOnChange, type: "text", placeholder: "Ingresa el nombre a buscar" })),
+            React.createElement("input", { "data-testid": "test__search", className: "Search__input form-control", onChange: props.handleOnChange, type: "text", placeholder: "Ingresa el nombre a buscar" })),
         React.createElement("div", { className: "Search__function pl-3" },
-            React.createElement("button", { onClick: props.searchPokemon, "data-testid": "btn", className: "Search__button btn btn-primary" }, "Buscar"))))); };
+            React.createElement("button", { onClick: props.searchPokemon, "data-testid": "test__btn", className: "Search__button btn btn-primary" }, "Buscar"))))); };
 exports.Search = Search;
 
 
@@ -5274,9 +5262,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Home = void 0;
 var react_1 = __importStar(__webpack_require__(526));
+var ReactDOM = __importStar(__webpack_require__(961));
 var index_1 = __webpack_require__(160);
-var index_2 = __webpack_require__(547);
+var index_2 = __importDefault(__webpack_require__(547));
 var index_3 = __webpack_require__(204);
+var index_4 = __webpack_require__(16);
+var index_5 = __webpack_require__(849);
 var arrayFilter_1 = __importDefault(__webpack_require__(325));
 var Home = function () {
     var _a = react_1.useState([]), pokemons = _a[0], setPokemons = _a[1];
@@ -5391,10 +5382,14 @@ var Home = function () {
         modalOriginal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
         modalOriginal.style.height = "100%";
     }
-    return (react_1.default.createElement("div", { className: "Home container" },
+    if (modal === true) {
+        return ReactDOM.createPortal(react_1.default.createElement(index_4.Modal, { handleModal: handleModal, stateModal: modal },
+            react_1.default.createElement(index_5.CompleteCard, { collectionPokemonView: pokemonView })), document.getElementById('modal'));
+    }
+    return (react_1.default.createElement("div", { "data-testid": "test__home", className: "Home container" },
         react_1.default.createElement(index_1.Header, null),
         react_1.default.createElement(index_3.Search, { handleOnChange: handleOnChange, pokemonName: pokemonName, searchPokemon: searchPreviewPokemon }),
-        react_1.default.createElement(index_2.Presentation, { collectionPokemonsView: pokemonsView, collectionPokemonView: pokemonView, handleModal: handleModal, stateModal: modal, stateLoading: loading })));
+        react_1.default.createElement(index_2.default, { collectionPokemonsView: pokemonsView, collectionPokemonView: pokemonView, handleModal: handleModal, stateLoading: loading })));
 };
 exports.Home = Home;
 

@@ -5,19 +5,20 @@ import {Search} from '../index';
 
 describe('Search', () => {
 
-    afterEach(() => {
-        cleanup()
-    })
+    afterEach(() => { cleanup() })
+
+    beforeEach(() => console.log('COMPONENT TEST "SEARCH"'))
+
 
     it('render correctly', () => {
         const {getByTestId, getByPlaceholderText} = render(<Search/>);
 
-        expect(getByTestId("Search__input")).toBeTruthy()
+        expect(getByTestId("test__search")).toBeTruthy()
         expect(getByPlaceholderText("Ingresa el nombre a buscar")).toBeTruthy()
     })
 
     it('update on change', () => {
-        const {getByTestId, getByPlaceholderText} = render(<Search/>);
+        const {getByPlaceholderText} = render(<Search/>);
 
         const searchInput = getByPlaceholderText('Ingresa el nombre a buscar')
 
@@ -27,9 +28,18 @@ describe('Search', () => {
     })
 
     it('update on click', () => {
-        const {getByTestId, getByPlaceholderText} = render(<Search/>);
 
-        fireEvent.click(getByTestId('btn'))
+        const mockupSearchPokemon = jest.fn()
+
+
+        const {getByTestId} = render
+        (<Search
+        searchPokemon={mockupSearchPokemon}
+        />);
+
+        fireEvent.click(getByTestId('test__btn'))
+
+        expect(mockupSearchPokemon).toHaveBeenCalledTimes(1)
 
     })
 

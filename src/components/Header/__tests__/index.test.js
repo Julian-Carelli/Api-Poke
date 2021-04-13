@@ -5,14 +5,15 @@ import {Header} from '../index';
 
 describe('Header', () => {
 
-    afterEach(() => {
-        cleanup()
-    })
+    afterEach(() => { cleanup() })
+
+    beforeEach(() => console.log('COMPONENT TEST "HEADER"'))
+
 
     it('render correctly', () => {
         const {getByTestId} = render(<Header/>);
 
-        expect(getByTestId("Header")).toHaveTextContent('Pokemon Finder')
+        expect(getByTestId("test__header")).toHaveTextContent('Pokemon Finder')
     
     })
 })

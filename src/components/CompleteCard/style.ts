@@ -41,6 +41,11 @@ padding:45px 0px;
     padding:25px 0px;
 }
 
+.CompleteCard__img {
+    width:200px;
+    height:200px;
+}
+
 .CompleteCard__title_stats {
     width:80%;
     color:white;

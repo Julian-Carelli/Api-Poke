@@ -1,35 +1,42 @@
 
 import React from 'react';
-import { render} from '@testing-library/react';
+import { render, cleanup} from '@testing-library/react';
 import {CompleteCard} from '../index';
 
 const stubbedCardComplete = {
-  name: "Slovakia",
+  name: "testName",
   types:[
     {
         type: {
-            name:'juli'
+            name:'testName'
         }
     }
   ],
   sprites:{
-    front_default: 'pipo',
-    back_default:'pipe'
+    front_default: 'testFront',
+    back_default:'testBack'
   },
   stats:[
       {
           stat:{
-              name:'juli'
+              name:'testStat'
           },
-          base_stat: 'pipo'
+          base_stat: 'testBase'
       }
   ]
 };
 
 describe('CompleteCard', () => {
-  it('render correctly', () => {
-      const {getByTestId} = render(<CompleteCard collectionPokemonView={stubbedCardComplete} />);
 
-      expect(getByTestId("CompleteCard")).toBeTruthy()
-  })
+    afterEach(() => { cleanup() })
+
+    beforeEach(() => console.log('COMPONENT TEST "COMPLETECARD"'))
+
+
+    it('render correctly', () => {
+        const {getByTestId} = render(<CompleteCard collectionPokemonView={stubbedCardComplete} />);
+
+        expect(getByTestId("test__completeCard")).toHaveTextContent('testName');
+
+    })
 })

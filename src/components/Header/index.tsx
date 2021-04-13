@@ -4,8 +4,8 @@ import {HeaderStyled} from './style';
 
 
 export const Header = () => (
-    <HeaderStyled data-testid="Header">
-        <div className="Header__presentation">
+    <HeaderStyled>
+        <div data-testid="test__header" className="Header__presentation">
                 <h2 className="Header__title">Pokemon Finder</h2>
         </div>
         <div className="Header__info">
@@ -14,4 +14,4 @@ export const Header = () => (
             </p>
         </div>
     </HeaderStyled>
-)
+);

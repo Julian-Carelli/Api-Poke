@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import * as ReactDOM from 'react-dom';
 
 import {Header} from '../../components/Header/index';
 import Presentation from '../../components/Presentation/index';
 import {Search} from '../../components/Search/index';
+import {Modal} from '../../components/Modal/index';
+import {CompleteCard} from '../../components/CompleteCard/index';
 
 import arrayFilter from '../../utils/arrayFilter';
 
@@ -131,8 +134,24 @@ export const Home = () => {
     }
 
 
+    if(modal ===  true){
+        return ReactDOM.createPortal(
+            <Modal
+                handleModal={handleModal} 
+                stateModal={modal}>
+
+                    <CompleteCard
+                    collectionPokemonView={pokemonView}
+                    ></CompleteCard>       
+
+            </Modal>, document.getElementById('modal')
+        )
+    }
+
+
     return(
-        <div className="Home container">
+        
+        <div data-testid="test__home" className="Home container">
             <Header></Header>
             <Search
                 handleOnChange={handleOnChange}
@@ -144,11 +163,8 @@ export const Home = () => {
                 collectionPokemonsView={pokemonsView}
                 collectionPokemonView={pokemonView}
                 handleModal={handleModal}
-                stateModal={modal}
                 stateLoading={loading}
             ></Presentation>
         </div>
     )
-
-
-}
+};

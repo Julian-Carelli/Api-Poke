@@ -16,7 +16,7 @@ export const PreviewCard = (props:IProps) => (
         </div>
         <div className="PreviewCard__moreInformation">
             <div className="PreviewCard__modal">
-                <button className="btn btn-primary" id={props.pokemonId} onClick={(e) => props.handleModal(e)} data-testid="btn">Ver mas</button>
+                <button className="btn btn-primary" id={props.pokemonId} onClick={(e) => props.handleModal(e)} data-testid="test__btn">Ver mas</button>
             </div>
         </div>
     </PreviewCardStyled>

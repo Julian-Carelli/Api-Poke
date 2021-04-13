@@ -1,13 +1,12 @@
 import * as React from 'react';
 
-
 import {IProps} from './IProps';
 import {CompleteCardStyled} from './style';
 
 export const CompleteCard = (props:IProps) => (
 
 
-   <CompleteCardStyled data-testid="CompleteCard">
+   <CompleteCardStyled data-testid="test__completeCard">
        
         <div className="CompleteCard__header row">
             <div className="CompleteCard__presentation col-sm-12 col-md-12 col-lg-4 col-xl-4">
@@ -23,7 +22,7 @@ export const CompleteCard = (props:IProps) => (
         <div className="CompleteCard__information row">
             <div className="CompleteCard__background_front col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <div className="CompleteCard__background">
-                    <img width="200px;" height="200px;" className="CompleteCard__img" src={props.collectionPokemonView.sprites.front_default} alt={props.collectionPokemonView.name}></img>
+                    <img className="CompleteCard__img" src={props.collectionPokemonView.sprites.front_default} alt={props.collectionPokemonView.name}></img>
                 </div>
                 <div>
                     <p className="CompleteCard__text_front">{props.collectionPokemonView.name} de frente.</p>
@@ -31,7 +30,7 @@ export const CompleteCard = (props:IProps) => (
             </div>
             {props.collectionPokemonView.sprites.back_default &&
             <div className="CompleteCard__background_back col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                <img width="200px;" height="200px;" className="CompleteCard__img" src={props.collectionPokemonView.sprites.back_default} alt={props.collectionPokemonView.name}></img>
+                <img className="CompleteCard__img" src={props.collectionPokemonView.sprites.back_default} alt={props.collectionPokemonView.name}></img>
                 <p className="CompleteCard__text_back">{props.collectionPokemonView.name} de atrás.</p>
             </div>
             }

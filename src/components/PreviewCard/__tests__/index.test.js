@@ -4,9 +4,9 @@ import {PreviewCard} from '../index';
 
 describe('PreviewCard', () => {
 
-    afterEach(() => {
-        cleanup()
-    })
+    afterEach(() => { cleanup() })
+
+    beforeEach(() => console.log('COMPONENT TEST "PREVIEWCARD"'))
 
 
     it('render correctly', () => {
@@ -20,7 +20,7 @@ describe('PreviewCard', () => {
 
         const {getByTestId} = render(<PreviewCard handleModal={mockOnClick} />)
 
-        fireEvent.click(getByTestId('btn'))
+        fireEvent.click(getByTestId('test__btn'))
 
         expect(mockOnClick).toHaveBeenCalledTimes(1)
 

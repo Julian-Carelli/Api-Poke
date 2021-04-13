@@ -3,24 +3,26 @@ import { render, cleanup} from '@testing-library/react';
 import Presentation from '../index';
 
 describe('Presentation', () => {
-  afterEach(() => {
-      cleanup()
-  })
+
+    afterEach(() => { cleanup()})
+
+    beforeEach(() => console.log('COMPONENT TEST "PRESENTATION"'))
 
 
-  it('render correctly', () => {
+    it('render correctly', () => {
 
-    const mockCollectionPokemons = jest.fn();
+        const mockCollectionPokemons = jest.fn();
 
-    const mockCollectionPokemon = []
-    
+        const mockCollectionPokemon = [];
+        
 
-    const {getByTestId} = render(
-    <Presentation 
-    collectionPokemonsView={mockCollectionPokemons} 
-    collectionPokemonsView={mockCollectionPokemon} 
-    />);
+        const {getByTestId} = render(
+        <Presentation 
+        collectionPokemonsView={mockCollectionPokemons} 
+        collectionPokemonsView={mockCollectionPokemon} 
+        />);
 
-    expect(getByTestId('Presentation')).toBeTruthy()
-  })
-})
+        expect(getByTestId('Presentation')).toBeTruthy()
+    });
+
+});
