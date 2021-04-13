@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
     "build": "webpack",
     "build:production": "webpack serve",
     "build:dev": "webpack serve --config ./webpack.dev.config.js",

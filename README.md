@@ -1,29 +1,31 @@
 # Api-Poke
 
-Project that display information and search all about the pokedex thanks to the API "PokeApi"
+Un proyecto que trabaja con la API "PokeAPi" para mostrar y buscar pokemones de una manera sencilla y eficaz.
 
-# step to step for Run this App
+# Como correr el proyecto?
 
-# required a pair dependencies
 
-Node version: 15.14.0
+# Clonando el proyecto
 
-Npm version: 7.9.0
+git clone git@github.com:Julian-Carelli/Api-Poke.git
 
-# install all dependencies from project
+
+# Instalando todas las dependencias que tenga el proyecto
 
 npm i
 
-# Run the project
 
-npm run dev  
+# Y para hacer correr el proyecto de manera local 
 
-. this is running on the port 3000
+npm run build:dev
 
-# Run the tests with Jest 
+. Se utiliza el puerto 3000 para poder ejecutar este comando.
+
+
+# Para testear con Jest y Testing Library 
 
 npm run test
 
-And now ready for use.
+Y ahora listo para usar :D
 
 
