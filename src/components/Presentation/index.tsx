@@ -11,6 +11,15 @@ import {Loading} from '../Loading/index';
 
 const Presentation = (props:IProps) => (
     <PresentationStyled data-testid="Presentation">
+
+        {props.stateAlert === true && 
+
+        <p className="Presentation__alert text-danger">
+            Por favor, escribi un pokemon para poder hacer una busqueda
+        </p>
+
+        }
+
         <div className="Presentation__row row">
 
             {props.stateLoading === true && 
@@ -35,6 +44,7 @@ const Presentation = (props:IProps) => (
                    pokemonName={name}
                    pokemonSprite={pokemonSprite}
                    pokemonId={id}
+                   key={id}
                    ></PreviewCard>
                 )
 

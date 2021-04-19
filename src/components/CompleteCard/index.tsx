@@ -20,7 +20,7 @@ export const CompleteCard = (props:IProps) => (
             <div className="CompleteCard__arrow"></div>
         </div>
         <div className="CompleteCard__information row">
-            <div className="CompleteCard__background_front col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div className="CompleteCard__background_front col-6 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div className="CompleteCard__background">
                     <img className="CompleteCard__img" src={props.collectionPokemonView.sprites.front_default} alt={props.collectionPokemonView.name}></img>
                 </div>
@@ -29,7 +29,7 @@ export const CompleteCard = (props:IProps) => (
                 </div>
             </div>
             {props.collectionPokemonView.sprites.back_default &&
-            <div className="CompleteCard__background_back col-6 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <div className="CompleteCard__background_back col-6 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <img className="CompleteCard__img" src={props.collectionPokemonView.sprites.back_default} alt={props.collectionPokemonView.name}></img>
                 <p className="CompleteCard__text_back">{props.collectionPokemonView.name} de atrás.</p>
             </div>
@@ -37,7 +37,7 @@ export const CompleteCard = (props:IProps) => (
             
         </div>
         <div className="CompleteCard__information row">
-            <div className="CompleteCard__presentation col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div className="CompleteCard__presentation_stats col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <h2 className="CompleteCard__title_stats">Stats de {props.collectionPokemonView.name}</h2>
             </div>
             <div className="CompleteCard__stats col-12">

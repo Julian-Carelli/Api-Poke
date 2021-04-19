@@ -4,4 +4,5 @@ export interface IProps {
     handleModal:any;
     isReady:boolean;
     stateLoading:boolean;
+    stateAlert:boolean;
 } 

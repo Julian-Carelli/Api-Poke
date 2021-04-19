@@ -18,6 +18,8 @@ export const Home = () => {
     const [modal, setModal] = useState<boolean | undefined>(false);
     const [loading, setLoading] = useState<boolean | undefined>(false);
     const [isready, setIsReady] = useState<boolean | undefined>(false);
+    const [alert, setAlert] = useState<boolean | undefined>(false);
+    const [initialize, setInitialize] = useState<boolean | undefined>(false);
     
 
     /**
@@ -55,10 +57,20 @@ export const Home = () => {
      */
     const searchPreviewPokemon = () => {
 
+        if(!pokemonName && initialize === false){
+
+            setAlert(true)
+
+            return setTimeout(() => {
+                setAlert(false)
+            }, 3000)
+        }
+
         const inmutableCharacters:any = [...pokemons];
 
         const filterPokemons:Array<object> = arrayFilter(inmutableCharacters, pokemonName);
 
+        setInitialize(true);
         return setPokemonsView(filterPokemons);
 
     };
@@ -196,14 +208,13 @@ export const Home = () => {
                 handleModal={handleModal}
                 isReady={isready}
                 stateLoading={loading}
+                stateAlert={alert}
             ></Presentation>
 
             {modal === true && 
                 ReactDOM.createPortal(
                     <Modal
-                        handleModal={handleModal} 
-                        stateModal={modal}>
-
+                        handleModal={handleModal}>
                             <CompleteCard
                             collectionPokemonView={pokemonView}
                             ></CompleteCard>       

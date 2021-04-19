@@ -6,7 +6,7 @@ export const ModalStyled = styled.section.attrs({
 
 width:60%;
 padding:40px;
-@media screen and (max-width:728px){
+@media screen and (max-width:1027px){   
     width:100%;
 }
 
@@ -16,11 +16,27 @@ padding:40px;
 
 .Modal__function{
     display:flex;
-    justify-content:flex-end;   
+    justify-content:center;
+    @media screen and (max-width:1027px){
+        justify-content:center;  
+        font-size:13px;
+    }
+    @media screen and (max-width:767px){
+        width:100%;
+        font-size:13px;
+    }
 }
 
 .Modal__close_button {
-    width:100px;
+    width: 40%;
+    @media screen and (max-width:1067px){
+        width:60%;
+        font-size:13px;
+    }
+    @media screen and (max-width:767px){
+        width:100%;
+        font-size:13px;
+    }
 }
 `;
 

@@ -5,6 +5,12 @@ export const PresentationStyled = styled.section.attrs({
 })`
 
 
+
+.Presentation__alert {
+    font-size:18px;
+    padding-top:25px;
+}
+
 .Presentation__row {
     padding:45px 0px;
 }
