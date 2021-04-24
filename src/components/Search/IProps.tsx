@@ -1,5 +1,5 @@
 export interface IProps {
-    handleOnChange:any,
+    handleOnChange:(e:any) => void,
     pokemonName: string,
-    searchPokemon:any;
+    searchPokemon:() => void;
 };

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
 export interface IProps {
-    handleModal:any, 
+    handleModal:Function, 
     children:ReactNode
 };

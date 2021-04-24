@@ -1,7 +1,7 @@
 export interface IProps {
     collectionPokemonsView:Array<Object>;
     collectionPokemonView:Array<Object>;
-    handleModal:any;
+    handleModal:(e:any) => void;
     isReady:boolean;
     stateLoading:boolean;
     stateAlert:boolean;

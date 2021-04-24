@@ -8,6 +8,7 @@ import {Modal} from '../../components/Modal/index';
 import {CompleteCard} from '../../components/CompleteCard/index';
 
 import arrayFilter from '../../utils/arrayFilter';
+import ModalStyleChange from '../../utils/ModalStyleChange';
 
 export const Home = () => {
 
@@ -161,37 +162,29 @@ export const Home = () => {
     };
 
 
-    /** evento "keydown" para detectar la tecla presiona y que se ejecute la funcion escapeModal */
+    useEffect(() => {
+        /** constante para obtener el modal **/
+        const modalOriginal = document.getElementById('modal');
 
-    document.addEventListener('keydown', escapeModal);
+        /** Condicional para que se pueda atrapar el error si el metodo ModalStyleChange carga antes que el elemento en el DOM**/
+        if(!modalOriginal){
+            return console.log('Sorry not loaded')
+        }
+
+        
+        ModalStyleChange(false, modalOriginal);
 
 
-    /** Estilos del modal que seran o no reemplazados a medida que el estado del mismo, cambie entre verdadero
-     * a falso
-     */
+        if(modal === true){
+
+            ModalStyleChange(true, modalOriginal);
     
-    const modalOriginal = document.getElementById('modal');
-    modalOriginal.style.position = "";
-    modalOriginal.style.top = "";
-    modalOriginal.style.width = "";
-    modalOriginal.style.backgroundColor = "";
-    modalOriginal.style.height = "";
-
-    if(modal === true){
-        modalOriginal.style.position = "fixed";
-        modalOriginal.style.top = "0px";
-        modalOriginal.style.width = "100%";
-        modalOriginal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-        modalOriginal.style.height = "100%";
-    }
-
-
-    /** Dependiendo del estado del modal, se podra mostrar el component Modal con sus respectivo componente para mostrar 
-     * la informacion completa del pokemon
-     */
-
+             /** evento "keydown" para detectar la tecla presiona y que se ejecute la funcion escapeModal **/
+            document.addEventListener('keydown', escapeModal);
     
+        }
 
+    })
 
     return(
         <div data-testid="test__home" className="Home container">

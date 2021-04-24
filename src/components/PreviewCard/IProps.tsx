@@ -1,6 +1,6 @@
 export interface IProps  {
-    handleModal:any;
+    handleModal: (e:any) => void;
     pokemonName:string;
-    pokemonSprite:any;
-    pokemonId:any;
+    pokemonSprite:string;
+    pokemonId:string;
 }
