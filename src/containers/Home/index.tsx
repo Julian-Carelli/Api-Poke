@@ -8,7 +8,7 @@ import {Modal} from '../../components/Modal/index';
 import {CompleteCard} from '../../components/CompleteCard/index';
 
 import arrayFilter from '../../utils/arrayFilter';
-import ModalStyleChange from './../../utils/ModalStyleChange';
+import {modalStyleChange} from '../../utils/modalStyleChange';
 
 export const Home = () => {
 
@@ -172,12 +172,12 @@ export const Home = () => {
         }
 
 
-        ModalStyleChange(false, modalOriginal);
+        modalStyleChange(false, modalOriginal);
 
 
         if(modal === true){
 
-            ModalStyleChange(true, modalOriginal);
+            modalStyleChange(true, modalOriginal);
     
              /** evento "keydown" para detectar la tecla presiona y que se ejecute la funcion escapeModal **/
             document.addEventListener('keydown', escapeModal);
