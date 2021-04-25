@@ -8,7 +8,6 @@ import {Modal} from '../../components/Modal/index';
 import {CompleteCard} from '../../components/CompleteCard/index';
 
 import arrayFilter from '../../utils/arrayFilter';
-import {modalStyleChange} from '../../utils/modalStyleChange';
 
 export const Home = () => {
 
@@ -22,6 +21,35 @@ export const Home = () => {
     const [alert, setAlert] = useState<boolean | undefined>(false);
     const [initialize, setInitialize] = useState<boolean | undefined>(false);
     
+
+    /**
+    * Funcion que agrega/elimina estilos en el modal
+    * @param stateModal Estado del modal, verdadero o falso.
+    * @param modal Modal que se va a modificar
+    * @returns verdadero o falso
+    */
+    const modalStyleChange = (stateModal:boolean, modal:HTMLElement) => {
+        const modalOriginal:HTMLElement = modal;
+
+        if(stateModal === true){
+            modalOriginal.style.position = "fixed";
+            
+            modalOriginal.style.top = "0px";
+            modalOriginal.style.width = "100%";
+            modalOriginal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+            modalOriginal.style.height = "100%";
+
+            return 1;
+        }
+
+        modalOriginal.style.position = "";
+        modalOriginal.style.top = "";
+        modalOriginal.style.width = "";
+        modalOriginal.style.backgroundColor = "";
+        modalOriginal.style.height = "";
+
+        return 0;
+};
 
     /**
      * Funcion que busca traer a todos los pokemones haciendo una busqueda parcial de la informacion
@@ -155,7 +183,7 @@ export const Home = () => {
      * @param e evento para detectar que tecla se esta utilizando
      */
 
-     const escapeModal = e => {
+    const escapeModal = e => {
         if(e.key === "Escape") {
             setModal(false)
         }
@@ -168,7 +196,7 @@ export const Home = () => {
 
         /** Condicional para que se pueda atrapar el error si el metodo ModalStyleChange carga antes que el elemento en el DOM**/
         if(!modalOriginal){
-            return console.log('Sorry not loaded')
+            return console.log('Sorry not loaded');
         }
 
 
@@ -184,7 +212,7 @@ export const Home = () => {
     
         }
 
-    })
+    });
 
     return(
         <div data-testid="test__home" className="Home container">
