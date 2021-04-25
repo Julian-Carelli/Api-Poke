@@ -8,7 +8,7 @@ import {Modal} from '../../components/Modal/index';
 import {CompleteCard} from '../../components/CompleteCard/index';
 
 import arrayFilter from '../../utils/arrayFilter';
-import ModalStyleChange from '../../utils/ModalStyleChange';
+import ModalStyleChange from './../../utils/ModalStyleChange';
 
 export const Home = () => {
 
@@ -171,7 +171,7 @@ export const Home = () => {
             return console.log('Sorry not loaded')
         }
 
-        
+
         ModalStyleChange(false, modalOriginal);
 
 
